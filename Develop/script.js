@@ -3,6 +3,7 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  var hour = dayjs().hour() - 9;
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -26,7 +27,6 @@ $(function () {
   // current hour in 24-hour time?
   //
   
-  var hour = dayjs().hour() - 9;
   console.log(hour);
   $('.time-block').each(function () {
     var id = $(this).attr('id').split('-')[1];
@@ -55,10 +55,7 @@ $("#hour-14 .description").val(localStorage.getItem("hour-14"));
 $("#hour-15 .description").val(localStorage.getItem("hour-15"));
 $("#hour-16 .description").val(localStorage.getItem("hour-16"));
 $("#hour-17 .description").val(localStorage.getItem("hour-17"));
-$("#hour-18 .description").val(localStorage.getItem("hour-18"));
-
-
-
+ 
   // TODO: Add code to display the current date in the header of the page.
-  $("#currentDay").text(dayjs().format("ddd, MMM DD, YYYY h:mm a"));
+  $("#currentDay").text(dayjs().format("ddd, MMM DD, YYYY"));
 });
